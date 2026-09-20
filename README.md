@@ -245,11 +245,16 @@ in Brightwater close entirely from January to March.
 <!-- One complete question and answer, pasted as text, with the source line
      visible. Milestone 4. -->
 
-**Question:**
+**Question:** Answer using only the information in the documents below. If they don't cover it, say you don't have enough information. Document: guide_brightwater.md. What is the population of brightwater?
 
-**Answer:**
+**Answer:** 
 
 ```
+(best distance 0.499, cutoff 0.6)
+
+Brightwater has a population of about 40,000 people, which roughly doubles during term time (guide_brightwater.md).
+
+Sources retrieved: guide_brightwater.md, guide_corry_vale.md, guide_kestrelford.md, guide_regional_transport.md, guide_seasons.md
 ```
 
 **My relevance cutoff:**
@@ -265,6 +270,16 @@ in Brightwater close entirely from January to March.
 
 | Question | In corpus? | Best distance |
 |---|---|---|
+|What is the best place to walk in the region?|Yes|0.509|
+|Which place in the region would be the best to visit in Autumn?|Yes|0.469|
+|What food and drinks does Pellew Sands have?|Yes|0.541|
+|What places in the region do you recommend for the someone with limited mobility to visit in the region?|Yes|0.548|
+|What is the most difficult place to walk in the region?|Yes|0.548|
+|Do you recommend visiting Chicago?|No|0.612|
+|Who won the 1994 World Cup?|No|0.903|
+|What food and drinks are in the World Cup?|No|0.753|
+|What is the recommended dosage for ibuprofen for a headache?|No|0.833|
+|What is the capital?|No|0.797|
 |  |  |  |
 
 ## How I Used AI
