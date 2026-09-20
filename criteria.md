@@ -25,6 +25,11 @@ contains the answer.
 **Why this target:**
 <!-- e.g. "One of my questions is about a topic only two documents mention, so
      I expect that one to be hard." -->
+1. Best places in the region to walk which is the topic in `guide_walking.md`. Although the documents related to the locations that are mentioned as best places to walk can be referenced too (`guide_thornby_wells.md`, `guide_kestrelford.md`, `guide_thornby_wells.md`).
+2. Best places in the region for someone with limited mobility to visit should definitely reference `guide_accessibility.md` and the corresponding guide corpora for the locations mentioned (i.e. `guide_thornby_wells.md`, `guide_marchwood.md`, `guide_brightwater.md`).
+3. This question should reference `guide_pellew_sands.md` and `guide_eating.md` for foods and drinks available in Pellew Sands.
+4. Most difficult place in the region to walk can either be Kestrelford, Halden Bay, and/or Corry Vale. (`guide_accessibility.md`).
+5. Best place in the region to visit in the Autumn is Brightwater in late September (`guide_seasons.md`, `guide_brightwater.md`).
 
 ---
 
@@ -35,6 +40,7 @@ Every answer the system produces names at least one source document.
 **Why this target:**
 <!-- Why all five and not four? What about your setup makes that achievable —
      or what would have to go wrong for it not to be? -->
+Not all documents need to be referenced but I think the mentioning all sources would give a more accurate stance of the corpus given.
 
 ---
 
