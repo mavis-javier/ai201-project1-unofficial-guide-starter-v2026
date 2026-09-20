@@ -293,9 +293,9 @@ Sources retrieved: guide_brightwater.md, guide_corry_vale.md, guide_kestrelford.
 
      Milestone 5. -->
 
-**1.**
+**1.** Asked Claude to explain in more detail what "Corpus" and "Corpora" means and it did define their meanings (corpora is really just the plural of corpus) and it immediately detected that it was for a RAG pipeline and defined other useful glossary such as Chunk, Embed, and Query Time.
 
-**2.**
+**2.** I used Claude to explain to me what "Chunk" and "Overlap" mean and it did define it as prompted but also recommended the overlap to be 20% of the chunk size based on usual values other RAG systems use.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never

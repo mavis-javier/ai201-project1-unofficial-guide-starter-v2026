@@ -58,6 +58,7 @@ in at least 4 of 5 tries.
 **Why this target:**
 <!-- What did your distances look like when you set the cutoff in Milestone 4?
      Was there a clean gap, or did the two groups overlap? -->
+There was clean gap between the cutoff questions (i.e. questions related to the corpus versus questions that are out of scope). Questions related the corpus fall in the range of 0.6 whereas out of scope questions had a way higher distance (0.7+).
 
 ---
 
@@ -78,7 +79,7 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
+Initially, I counted chunks in terms of lines of text in a document. The documents in my corpus ranged about 35-51 lines of text but I thought it would be more accurate to take the higher end which is 51 (just used 50 for better calculation of overlap) then opened a random document and counted the characters for 50 lines of text. I used characters instead of lines because `chunker.py` did chunk by characters.
 
 
 ---
@@ -96,7 +97,7 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
+I think it's important to give every question the most accurate for the best experience in recommendation such as the `city_guides` corpus. It is important to get accessibility and proper accomodations accurate to avoid litigations for disabled tourists.
 
 
 ---
