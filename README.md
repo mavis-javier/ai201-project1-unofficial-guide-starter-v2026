@@ -29,8 +29,8 @@
 
 ## Chunking Strategy
 
-**Chunk size:**
-**Overlap:**
+**Chunk size:** 2,228 or 51 lines of text
+**Overlap:** 15% of chunk size - ~335 characters of text or 8 lines of text
 
 <!-- What about YOUR documents made you pick these numbers? Short posts and
      long sectioned guides don't want the same chunking, and "800 seemed
@@ -41,6 +41,7 @@
      more than pretending you got it right first time.
 
      Milestone 3. -->
+     Considering the default chunk chosen for this corpus (city_guides) is 51, I chose right at 50 because it matches to the average number of "lines" of text in some of the files I've read. Each document has ranges from 35 to 51 lines of text so it is ideal. For the overlap, I checked with Claude and referenced two of the documents (`guide_brightwater.md` and `guide_seasons.md`) for how long is each subtopic paragraph compared to the whole paragraph and it is around 15% (12.5% and 20% respectively).
 
 ## Sample Chunks
 
@@ -53,29 +54,190 @@
 
      Milestone 3. -->
 
-**Chunk 1** — source: `` — produced by: ``
+**Chunk 1** — source: guide_accessibility.md `` — produced by: chunker.py::split_documents``
 
 ```
+# Getting around the region with limited mobility
+
+An honest assessment rather than a promotional one. Some of these places are
+difficult and it is better to know in advance.
+
+## Straightforward
+
+**Thornby Wells** is the easiest town in the region. It is flat, compact, and
+everything is within three minutes of everything else. Parking is free for two
+hours anywhere in town and the station is central. The pump room and gardens
+are level throughout.
+
+**Marchwood** has a modern tram network with level boarding on all four lines,
+running every 8 minutes on weekdays. The city museum and covered market are both
+step-free. The distances between districts are the main consideration.
+
+**Brightwater** is level along the river and through the centre. The mill museum
+is step-free. The station is a 15-minute walk from campus on flat ground, or the
+shuttle meets the four busiest arrivals.
+
+## Mixed
+
+**Pellew Sands** has a two-mile seafront that is flat the whole way, and
+everything of interest is on it or one street back. The land train runs the
+length of the promenade hourly between Easter and September. The beach itself is
+hard sand and manageable at low tide.
+
+**Givens Mill** is one flat street along the river. The mill tour involves
+stairs and the machinery floor is not accessible; the tearoom and riverside are.
+
+## Difficult
+
+**Kestrelford** is built on a slope and the walk up from the lower car park is
+steeper than it looks on a map. There is no transport within the town.
+
+**Halden Bay** is built on three levels connected by stepped lanes. The harbour
+front is level; everything above it is not. This is hard going with luggage or a
+pushchair, let alone a wheelchair.
+
+**Corry Vale** has no public transport, villages two to four miles apart, and
+footpaths rather than pavements. **Elder Ness** is shingle and a single street.
+
+## Practical
+
+The nearest full hospital is in Marchwood. Brightwater has a hospital;
+Kestrelford, Halden Bay, Corry Vale, Givens Mill and Elder Ness have minor
+injuries units with limited hours or nothing at all.
+
+Mobile coverage is good in the town centres and patchy on the outskirts, and
+genuinely absent in parts of Corry Vale.
 ```
 
-**Chunk 2** — source: `` — produced by: ``
+**Chunk 2** — source: guide_corry_vale.md `` — produced by: chunker.py::split_documents``
 
 ```
+le in snow.
+
+## Practical notes
+
+Cash is still useful at the market and in smaller places, though cards are
+accepted almost everywhere now. Mobile coverage is good in the centre and
+patchy on the outskirts. The nearest full hospital is in Brightwater; there is
+a minor injuries unit locally with limited hours.
 ```
 
-**Chunk 3** — source: `` — produced by: ``
+**Chunk 3** — source: `guide_givens_mill.md` — produced by: chunker.py::split_documents``
 
 ```
+# Givens Mill
+
+Givens Mill is a village of 700 built around a working watermill that still grinds flour commercially. It is the sort of place people visit for an afternoon and then talk about for longer than the visit lasted.
+
+## Getting there
+
+No station and no bus on Sundays; four buses a day from Brightwater on weekdays, taking 30 minutes. Driving is 20 minutes. The village car park holds about forty cars and is full by 11am on summer Saturdays.
+
+## Getting around
+
+Everything is on one street along the river. The mill is at one end and the church at the other, eight minutes apart. The riverside path continues in both directions for as far as you want to walk.
+
+## Eat and drink
+
+A tearoom attached to the mill, open 10 to 4 daily except Tuesdays, which sells bread made from the flour ground twenty metres away and is the reason most people come. One pub, food served lunchtimes and Thursday to Saturday evenings.
+
+## What to see
+
+The mill runs tours on the hour from 11 to 3 and the machinery is operating during them, which is loud and much more impressive than a static exhibit. The church has a Saxon doorway. The river walk downstream reaches Brightwater in about three hours.
+
+## Where to stay
+
+Nothing in the village itself. The nearest rooms are in Brightwater, which is close enough that this is not really a problem — most people come for a half day.
+
+## When to go
+
+The mill runs March to November and is closed entirely in winter. Late spring is the best time. Summer Saturdays are busy enough that the car park becomes the limiting factor; come on a weekday if you can.
+
+## Practical notes
+
+Cash is still useful at the market and in smaller places, though cards are
+accepted almost everywhere now. Mobile coverage is good in the centre and
+patchy on the outskirts. The nearest full hospital is in Brightwater; there is
+a minor injuries unit locally with limited hours.
 ```
 
-**Chunk 4** — source: `` — produced by: ``
+**Chunk 4** — source: guide_marchwood.md `` — produced by: chunker.py::split_documents``
 
 ```
+# Marchwood
+
+Marchwood is the regional hub — 180,000 people, the junction everyone changes trains at, and a city most visitors pass through rather than stop in. That is a mistake, though an understandable one, since almost nothing of interest is near the station.
+
+## Getting there
+
+Every railway line in the region meets here, which is the city's defining feature. Trains to Brightwater run every 40 minutes until 11pm. The airport is 20 minutes out by a dedicated bus that runs every 15 minutes and costs more than the equivalent taxi shared between three people.
+
+## Getting around
+
+A tram network of four lines, running every 8 minutes on weekdays and every 15 at weekends, until midnight. A day ticket costs less than two single fares and nobody tells you this at the machine. The centre is walkable but the interesting districts are not adjacent to each other.
+
+## Eat and drink
+
+The best eating is in the Northgate district, a 12-minute tram ride from the station, where about thirty restaurants sit within four streets. The area immediately around the station is uniformly poor and expensive. Marchwood keeps later hours than anywhere else in the region — kitchens serve until 10:30pm, and until midnight on Fridays and Saturdays.
+
+## What to see
+
+The city museum is free and genuinely excellent, particularly the industrial floor. The covered market has operated since 1863 and is at its best on a weekday morning. The canal walk from Northgate to the old lock is 40 minutes and is the thing residents recommend when asked.
+
+## Where to stay
+
+Plentiful and, outside conference weeks, cheap. Northgate is the district worth staying in. Station-area hotels are convenient for an early train and dispiriting for anything else.
+
+## When to go
+
+Any time. This is the one place in the region that works in winter, since almost everything is indoors and nothing closes seasonally. Conference weeks in March and October fill the hotels and double the prices; check before booking.
+
+## Practical notes
+
+Cash is still useful at the market and in smaller places, though cards are
+accepted almost everywhere now. Mobile coverage is good in the centre and
+patchy on the outskirts. The nearest full hospital is in Brightwater; there
 ```
 
-**Chunk 5** — source: `` — produced by: ``
+**Chunk 5** — source: guide_seasons.md `` — produced by: chunker.py::split_documents``
 
 ```
+# When to visit the region
+
+## Spring, March to May
+
+Days lengthen quickly and businesses that closed for winter reopen through
+March and April. By May everything is open and the weather is reliable enough
+to plan around. Late May is arguably the best week of the year in Brightwater —
+long days, everything running, and the students gone.
+
+The Kestrelford Saturday market builds back to full size through April.
+
+## Summer, June to August
+
+June is excellent everywhere. July and August split: Halden Bay becomes very
+busy and the parking problem dominates, Kestrelford fills with walkers, and
+Brightwater goes quiet to the point of dullness with the university empty.
+
+If you are going to Halden Bay in August, arrive before 10am or plan to use the
+overflow lot.
+
+## Autumn, September to November
+
+September is the other sweet spot — warm, quiet, and everything still open.
+From late September Brightwater is at its busiest as term starts, and
+accommodation there becomes hard to find and expensive.
+
+By November the coastal businesses begin closing and the days are short.
+
+## Winter, December to February
+
+Brightwater carries on, since the university keeps it occupied. Halden Bay
+largely closes. Kestrelford's approach road is difficult in snow and the town
+is cut off for a day or two most winters.
+
+The coastal path is dramatic and frequently shut. Several riverside businesses
+in Brightwater close entirely from January to March.
 ```
 
 ## Sample Answer
